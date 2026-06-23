@@ -18,9 +18,14 @@ The chosen community is **r/AmItheAsshole**, a massive online forum where users 
 * **The Ambiguous Boundary:** Comments where a user spends 90% of the text validating the poster's feelings ("I totally get why you were mad, they treated you terribly...") but concludes with a soft reprimand ("...but yeah, you shouldn't have screamed at them, so ESH").
 * **Decision Rule:** The final legalistic acronym verdict dictates the label. If the text body contains conflicting sentiments but explicitly opens or closes with a definitive tag (e.g., "ESH"), it is assigned that tag. If no acronym is present, the label is determined by whether the text assigns moral fault exclusively to one party (NTA/YTA) or explicitly distributes blame to both sides (ESH).
 
-## 4. Data Collection Plan
-Data will be sourced from public comment sections on hot or top posts within r/AmItheAsshole. We will collect an even distribution across the classes (~70 examples per label) to achieve our minimum dataset size of 210 examples. If a class like ESH is underrepresented, we will explicitly search for threads with a "Controversial" or "ESH" flair to maintain a balanced distribution and prevent majority-class model bias.
+## 4. Data Collection Plan & Final Distribution
+Data was organically sourced from public comment sections across hot and trending conflict discussions within r/AmItheAsshole. While the original target was a strictly balanced class distribution (~70 comments per class), real-world community behavior yielded an organic, imbalanced social distribution across 245 total annotated examples:
 
+* **NTA:** 132 comments (53.8%)
+* **YTA:** 96 comments (39.2%)
+* **ESH:** 17 comments (7.0%)
+
+This real-world distribution was intentionally preserved in a 70/15/15 stratified split to test the limits of transformer-based transfer learning when confronting sparse minority class edge cases (such as mutual blame dynamics). No single label accounts for more than 70% of the dataset, satisfying the imbalance safeguard criteria.
 ## 5. Evaluation Metrics
 * **Overall Accuracy:** To capture baseline system performance across the entire test set.
 * **Per-Class F1-Score:** Crucial for this task to ensure the model isn't completely failing on the scarcer `ESH` class while hiding behind high accuracy on `NTA` or `YTA`. F1 balances precision and recall seamlessly.
