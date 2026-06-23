@@ -178,6 +178,7 @@ When encountering strong critical descriptors, it defaults to the YTA category. 
 
 ---
 
-## 9. Model Verification & Live Demo Links
-* **Live Demo Video Walkthrough:** [Insert Loom/YouTube Video Link Here]
+## 9. Model Verification
 * **Serialized Model Metrics:** Refer directly to the generated `evaluation_results.json` artifact committed within the primary repository tree.
+## 🔗 Quick Repository Links
+* [Annotated Dataset CSV File](dataset%20-%20Sheet1.csv)
